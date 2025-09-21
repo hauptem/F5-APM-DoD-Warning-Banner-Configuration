@@ -76,17 +76,14 @@ The guide includes three color variants of the DoD Warning Banner:
 ### Green Banner
 - Border color: Green (#00b000)
 - Button hover: Green gradient
-- Use case: Standard access
 
 ### Red Banner  
 - Border color: Red (#e60000)
 - Button hover: Red gradient
-- Use case: High security/classified systems
 
 ### Yellow Banner
 - Border color: Yellow (#e6c200) 
 - Button hover: Yellow gradient
-- Use case: Warning/caution systems
 
 ## Banner Features
 
@@ -104,5 +101,5 @@ After implementation:
 1. Verify the banner displays correctly on the test virtual server
 2. Confirm the "I ACKNOWLEDGE AND CONSENT" button functions properly
 3. Test that users can proceed through the access policy after consent
-4. Validate the banner appearance matches DoD requirements
+4. Validate the banner test matches DoD requirements
 5. Only migrate to production after successful testing and acceptance
