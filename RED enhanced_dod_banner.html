@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoD Warning Banner</title>
+    <script language="javascript" src="/public/include/js/session_check.js"></script>
+    <script language="javascript"><!--//
+        if(self != top) { top.location = self.location; }
+        window.onerror=function(){ return function(){ return; } }
+        
+        function sessionTimedOut()
+        {
+        try {
+        if ( "undefined" != typeof(window.external) && "undefined" != typeof(window.external.WebLogonClearSession) ){
+        window.external.WebLogonClearSession();
+        }
+        }catch(e){};
+        showSplashLayer("MessageDIV", SessionExpired_CustomizedScreenGet());
+        }
+        function OnLoad()
+        {
+        try {
+        if ( "undefined" != typeof(window.external) && "unknown" != typeof(window.external)
+        && "undefined" != typeof(window.external.WebLogonNotifyUser) && "unknown" != typeof(window.external.WebLogonNotifyUser) ){
+        window.external.WebLogonNotifyUser();
+        }
+        }catch(e){};
+        window.setTimeout("sessionTimeoutCheck(sessionTimedOut)", globalTimoutInterval);
+        }
+        function SubmitResult(choice)
+        {
+        // Add loading state to prevent double-clicks
+        var button = document.getElementById("button");
+        if (button.classList.contains('loading')) return;
+        button.classList.add('loading');
+        
+        var f = document.getElementById("hidden_form");
+        f.my_result.value = choice;
+        f.submit();
+        }
+    --></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, Tahoma, sans-serif;
+        }
+        
+        #dodnotice-banner {
+            background-color: #606060;
+            color: black;
+            font-size: 1.2em;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        #dodnotice-notice {
+            background-color: #ffffff;
+            border: 3px solid #e60000;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            padding: 1.5em;
+            max-width: 100ch;
+            width: 90%;
+            border-radius: 8px;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(0); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #dodnotice-notice div {
+            text-align: center;
+        }
+        
+        #dodnotice-notice p {
+            line-height: 1.4;
+            margin-bottom: 0.8em;
+            text-align: left;
+        }
+        
+        #dodnotice-notice p:first-child {
+            text-align: left;
+            font-size: 1.1em;
+            margin-bottom: 1em;
+        }
+        
+        #dodnotice-notice ul {
+            padding-left: 1.5em;
+            text-align: left;
+        }
+        
+        #dodnotice-notice li {
+            margin-bottom: 0.8em;
+            line-height: 1.4;
+        }
+        
+        #buttonbox {
+            text-align: center;
+            margin-top: 1em;
+        }
+        
+        #button {
+            width: 320px;
+            height: 70px;
+            font-family: Arial, Helvetica, Tahoma, sans-serif;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 
+                0 6px 20px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            background: linear-gradient(145deg, #e0e0e0, #d0d0d0);
+            color: #333;
+            border: 2px solid #999;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+        
+        #button:hover {
+            background: linear-gradient(145deg, #ff3333, #e60000);
+            color: white;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 15px 35px rgba(230, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border-color: #cc0000;
+        }
+        
+        #button:hover::before {
+            left: 100%;
+        }
+        
+        #button:active {
+            transform: translateY(-4px) scale(0.98);
+            box-shadow: 
+                0 8px 20px rgba(230, 0, 0, 0.3),
+                inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        #button:focus {
+            outline: 3px solid #0066cc;
+            outline-offset: 2px;
+        }
+        
+        .noscript-warning {
+            background: linear-gradient(135deg, #ffdddd, #ffcccc);
+            border: 2px solid #ff6666;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+        }
+        
+        /* Subtle pulse animation for the green border */
+        #dodnotice-notice {
+            animation: fadeIn 0.5s ease-in, borderPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes borderPulse {
+            0%, 100% { border-color: #e60000; }
+            50% { border-color: #ff3333; }
+        }
+        
+        /* Loading state for the button */
+        #button.loading {
+            pointer-events: none;
+            opacity: 0.8;
+            background: linear-gradient(145deg, #ccc, #bbb);
+            color: #666;
+        }
+        
+        #button.loading::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            margin: auto;
+            border: 3px solid transparent;
+            border-top-color: #666;
+            border-radius: 50%;
+            animation: spinFast 0.8s linear infinite;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        
+        @keyframes spinFast {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body onload="OnLoad()">
+    <div id="dodnotice-banner">
+        <div id="dodnotice-notice">
+            <p><b>DOD NOTICE AND CONSENT BANNER</b></p>
+            
+            <p>You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.</p>
+            
+            <p>By using this IS (which includes any device attached to this IS), you consent to the following conditions:</p>
+            
+            <ul>
+                <li>The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.</li>
+                <li>At any time, the USG may inspect and seize data stored on this IS.</li>
+                <li>Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.</li>
+                <li>This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.</li>
+                <li>Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.</li>
+            </ul>
+            <div>
+                <div id="buttonbox">
+                    <button id="button" onclick="javascript:SubmitResult(1)">I ACKNOWLEDGE<br>AND CONSENT</button>
+                </div>
+            </div>
+        </div>
+        
+        <noscript>
+            <p>This site requires Javascript and cookies for full functionality</p>
+        </noscript>
+    </div>
+    
+    <form method="post" id="hidden_form" name="hidden_form" action="/my.policy">
+        <input type='hidden' id="my_result" value='0' name='choice'>
+    </form>
+</body>
+</html>
