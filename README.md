@@ -23,7 +23,6 @@ The use of a DoD Warning Banner is a Defense Information Security Agency (DISA) 
 2. Select the access profile you want to modify (e.g., "Test-Application_CAC_Auth")
 3. Click **Edit** on the relevant line to launch the APM visual policy editor
 
-<img width="539" height="124" alt="Image" src="https://github.com/user-attachments/assets/952397f4-c181-42a1-9b27-bf06b0c26de2" />
 
 ### Step 2: Understand APM Access Policy Structure
 
