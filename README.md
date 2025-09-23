@@ -23,6 +23,7 @@ The use of a DoD Warning Banner is a Defense Information Security Agency (DISA) 
 2. Select the access profile you want to modify (e.g., "Test-Application_CAC_Auth")
 3. Click **Edit** on the relevant line to launch the APM visual policy editor
 
+<img width="1668" height="1222" alt="Image" src="https://github.com/user-attachments/assets/ffffde79-631d-4aa2-bbc2-000158a70d3a" />
 
 ### Step 2: Understand APM Access Policy Structure
 
@@ -30,6 +31,8 @@ The use of a DoD Warning Banner is a Defense Information Security Agency (DISA) 
 - This ensures that a user must accept the warning prior to user evaluation by APM, which includes the retrieval of the user's PKI certificate or login credentials
 - The start of the APM access policy is the first connection point into the access policy, represented by the plus "+" symbol immediately following the policy "Start" fallback path
 - Access policies are displayed visually and should be read from left to right, with the policy endpoint termination flags at the far right
+
+<img width="1668" height="1222" alt="Image" src="https://github.com/user-attachments/assets/40c302d7-a682-48ff-8c80-96b39ea683b8" />
 
 ### Step 3: Add Message Box Item to Access Policy
 
@@ -44,6 +47,8 @@ The use of a DoD Warning Banner is a Defense Information Security Agency (DISA) 
 6. Click **"Apply Access Policy"** in yellow text
 7. Click **"Close"** in the green box in the top right
 8. If your browser notifies you that the webpage is trying to close the tab, click **"OK"**
+
+<img width="1668" height="1222" alt="Image" src="https://github.com/user-attachments/assets/7753d929-2e22-4ae1-8ea7-38f47e0f931e" />
 
 ### Step 4: Customize the DoD Warning Banner Code
 
