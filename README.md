@@ -65,6 +65,10 @@ The use of a DoD Warning Banner is a Defense Information Security Agency (DISA) 
 7. Click **"Save Draft"** on the top right of the editor panel
 8. Click **"Yes"** when prompted to save the file
 
+<img width="1668" height="1222" alt="Image" src="https://github.com/user-attachments/assets/f0392247-5fc7-41ed-a009-7700bfe1af4a" />
+
+<img width="1668" height="1222" alt="Image" src="https://github.com/user-attachments/assets/ea5d4d29-6969-4159-828c-ffae11630def" />
+
 **Important:** Do not edit any portion of the provided code without testing, or unexpected behavior in APM may occur.
 
 ### Step 5: Apply the Access Policy, Synchronize the Configuration, and Test the Banner
@@ -75,6 +79,8 @@ The use of a DoD Warning Banner is a Defense Information Security Agency (DISA) 
 4. Test the modified policy using a test virtual server
 5. Ensure the operation of the **"I ACKNOWLEDGE AND CONSENT"** button allows the user to proceed through access policy evaluation successfully
 
+<img width="1550" height="1064" alt="Image" src="https://github.com/user-attachments/assets/f254afbe-e737-48f6-99c9-f61f88fc6d2f" />
+
 ## Available Banner Types
 
 The guide includes three color variants of the DoD Warning Banner:
@@ -83,13 +89,19 @@ The guide includes three color variants of the DoD Warning Banner:
 - Border color: Green (#00b000)
 - Button hover: Green gradient
 
+<img width="1163" height="725" alt="Image" src="https://github.com/user-attachments/assets/f3974f49-9a81-48db-91d1-9348b0ffc96d" />
+
 ### Red Banner  
 - Border color: Red (#e60000)
 - Button hover: Red gradient
 
+<img width="1151" height="720" alt="Image" src="https://github.com/user-attachments/assets/9910ca87-42c1-4876-aaba-12bf631776f3" />
+
 ### Yellow Banner
 - Border color: Yellow (#e6c200) 
 - Button hover: Yellow gradient
+
+<img width="1153" height="721" alt="Image" src="https://github.com/user-attachments/assets/22cb3d91-a8c9-4400-ace9-15c050832904" />
 
 ## Banner Features
 
