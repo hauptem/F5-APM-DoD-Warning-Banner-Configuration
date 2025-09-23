@@ -1,6 +1,8 @@
 # F5 DoD Warning Banner Configuration Guide
 
-This document outlines the steps required to add the standard DoD Warning Banner configuration to an F5 virtual server, where intermediary access controls for web applications are provided by deployed F5 Access Policy Manager. Most in use DOD Warning banners are many years old and have not been updated for modern web design capabilities and modern screen resolutions. This project's intent was to provide modernized banners using the standard "Advanced Customization" technique of a standard APM Message Box object.
+This document outlines the steps required to add the standard DoD Warning Banner configuration to an F5 virtual server, where intermediary access controls for web applications are provided by deployed F5 Access Policy Manager. 
+
+Most in-use DOD Warning banners are many years old and have not been updated for modern web design capabilities and modern screen resolutions. This project's intent was to provide modernized banners using the standard "Advanced Customization" technique of a standard APM Message Box object.
 
 **Note that this process is for "Standard" type APM Profiles and is not compatible with "Modern" Profiles.**
 
