@@ -106,7 +106,7 @@ The guide includes three color variants of the DoD Warning Banner:
 ## Banner Features
 
 All banner implementations include:
-- Responsive design for various screen sizes
+- Modern responsive design for various screen sizes
 - Accessibility features (focus indicators, semantic markup)
 - Modern CSS animations and transitions
 - Loading state prevention for double-clicks
