@@ -1,7 +1,8 @@
 # F5 DoD Warning Banner Configuration Guide
 
 This document outlines the steps required to add the standard DoD Warning Banner configuration to an F5 virtual server, where intermediary access controls for web applications are provided by deployed F5 Access Policy Manager.
-Note that this process is for "Standard" type APM Profiles and is not compatible with "Modern" Profiles.
+
+**Note that this process is for "Standard" type APM Profiles and is not compatible with "Modern" Profiles.**
 
 ## Background
 
