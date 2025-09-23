@@ -131,8 +131,10 @@ All banner implementations include:
 
 After implementation:
 1. Verify the banner displays correctly on the test virtual server
-2. Confirm the "I ACKNOWLEDGE AND CONSENT" button functions properly
-3. Test that users can proceed through the access policy after consent
+2. Validate the banner text matches DoD requirements
+3. Confirm the "I ACKNOWLEDGE AND CONSENT" button functions properly
+4. Test that users can proceed through the access policy after consent
+5. Only migrate to production after successful testing and acceptance
 
 ## License
 
@@ -155,5 +157,3 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 By using this software, you acknowledge that you have read and understood these disclaimers and agree to use this solution at your own risk.
 
-4. Validate the banner test matches DoD requirements
-5. Only migrate to production after successful testing and acceptance
