@@ -1,5 +1,16 @@
 # F5 DoD Warning Banner Configuration Guide
 
+![License](https://img.shields.io/badge/license-MIT-green)
+![F5 Compatible](https://img.shields.io/badge/F5%20BIG--IP-compatible-orange)
+![TMOS Version](https://img.shields.io/badge/TMOS-15.0%2B-red)
+![F5 iRules](https://img.shields.io/badge/F5-iRules%20(Tcl)-FF6600?logo=f5&logoColor=white)
+![F5 APM](https://img.shields.io/badge/F5-APM%20Auth-FF6600?logo=f5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-Grid%20%2B%20Flexbox-1572B6?logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-Semantic-E34F26?logo=html5&logoColor=white)
+
+---
+
 This document outlines the steps required to add the standard DoD Warning Banner configuration to an F5 virtual server, where intermediary access controls for web applications are provided by deployed F5 Access Policy Manager. 
 
 Most in-use DOD Warning banners are many years old and have not been updated for modern web design capabilities and modern screen resolutions. This project's intent was to provide modernized banners using the standard "Advanced Customization" technique of a standard APM Message Box object.
