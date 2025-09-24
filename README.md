@@ -54,7 +54,7 @@ The use of a DoD Warning Banner is a Defense Information Security Agency (DISA) 
 3. Click the radio button for **"Message Box"**
 4. Click **"Add Item"**
 5. In the Message Box configuration panel:
-   - Change the **Name** field in the Properties tab to **"DoD Banner"**
+   - Change the **Name** field in the Properties tab to **"DoD Warning Banner"**
    - Add the text **"Look in advanced customization!"** in the Message field
    - Click **"Save"** at the bottom of the message box configuration panel
 6. Click **"Apply Access Policy"** in yellow text
