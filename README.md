@@ -2,7 +2,8 @@
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![F5 Compatible](https://img.shields.io/badge/F5%20BIG--IP-compatible-orange)
-![TMOS Version](https://img.shields.io/badge/TMOS-15.0%2B-red)
+![TMOS Version](https://img.shields.io/badge/TMOS-17.x%2B-red)
+![TMOS Version](https://img.shields.io/badge/TMOS-21.x%2B-red)
 ![F5 APM](https://img.shields.io/badge/F5-APM%20Auth-FF6600?logo=f5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-Semantic-E34F26?logo=html5&logoColor=white)
