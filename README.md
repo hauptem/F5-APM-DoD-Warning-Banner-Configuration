@@ -1,24 +1,18 @@
 # F5 DoD Warning Banner Configuration Guide
 
 ![License](https://img.shields.io/badge/license-MIT-green)
-![F5 Compatible](https://img.shields.io/badge/F5%20BIG--IP-compatible-orange)
-![TMOS Version](https://img.shields.io/badge/TMOS-17.x%2B-red)
-![TMOS Version](https://img.shields.io/badge/TMOS-21.x%2B-red)
+![TMOS Version](https://img.shields.io/badge/TMOS-17.x%20%7C%2021.x-red)
 ![F5 APM](https://img.shields.io/badge/F5-APM%20Auth-FF6600?logo=f5&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-Semantic-E34F26?logo=html5&logoColor=white)
 
----
+This document outlines the steps required to add the standard DoD Warning Banner configuration to an F5 virtual server, where intermediary access controls for web applications are provided by deployed F5 Access Policy Manager.
 
-This document outlines the steps required to add the standard DoD Warning Banner configuration to an F5 virtual server, where intermediary access controls for web applications are provided by deployed F5 Access Policy Manager. 
-
-Most in-use DOD Warning banners are many years old and have not been updated for modern web design capabilities and modern screen resolutions. This project's intent was to provide modernized banners using the standard "Advanced Customization" technique of a standard APM Message Box object.
+Most in-use DoD Warning banners are many years old and have not been updated for modern web design capabilities and modern screen resolutions. This project's intent is to provide modernized banners using the standard "Advanced Customization" technique of a standard APM Message Box object.
 
 **Note that this process is for "Standard" type APM Profiles and is not compatible with "Modern" Profiles.**
 
 ## Background
 
-The use of a DoD Warning Banner is a Defense Information Security Agency (DISA) Security Technical Implementation Guide (STIG) requirement that is typically assigned as a Category III line item.
+The use of a DoD Warning Banner is a Defense Information Systems Agency (DISA) Security Technical Implementation Guide (STIG) requirement that is typically assigned as a Category III line item.
 
 **STIG Requirement:**
 > "The BIG-IP Core implementation must be configured to display the Standard Mandatory DoD-approved Notice and Consent Banner before granting access to virtual servers. (STIG ID: F5BI-LT-000023)"
@@ -56,7 +50,7 @@ The use of a DoD Warning Banner is a Defense Information Security Agency (DISA) 
 4. Click **"Add Item"**
 5. In the Message Box configuration panel:
    - Change the **Name** field in the Properties tab to **"DoD Warning Banner"**
-   - Add the text **"Look in advanced customization!"** in the Message field
+   - Add the text **"Look in advanced customization!"** in the Message field. This is a deliberate placeholder: it is fully replaced by the banner HTML in Step 4 and will only ever be seen if the advanced customization is missing or reverted, in which case it tells the operator exactly where to look
    - Click **"Save"** at the bottom of the message box configuration panel
 6. Click **"Apply Access Policy"** in yellow text
 7. Click **"Close"** in the green box in the top right
@@ -105,14 +99,14 @@ The guide includes three color variants of the DoD Warning Banner:
 
 <img width="1163" height="725" alt="Image" src="https://github.com/user-attachments/assets/f3974f49-9a81-48db-91d1-9348b0ffc96d" />
 
-### Red Banner  
+### Red Banner
 - Border color: Red (#e60000)
 - Button hover: Red gradient
 
 <img width="1151" height="720" alt="Image" src="https://github.com/user-attachments/assets/9910ca87-42c1-4876-aaba-12bf631776f3" />
 
 ### Yellow Banner
-- Border color: Yellow (#e6c200) 
+- Border color: Yellow (#e6c200)
 - Button hover: Yellow gradient
 
 <img width="1153" height="721" alt="Image" src="https://github.com/user-attachments/assets/22cb3d91-a8c9-4400-ace9-15c050832904" />
