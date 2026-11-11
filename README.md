@@ -94,22 +94,13 @@ The use of a DoD Warning Banner is a Defense Information Systems Agency (DISA) S
 The guide includes three color variants of the DoD Warning Banner:
 
 ### Green Banner
-- Border color: Green (#00b000)
-- Button hover: Green gradient
-
-<img width="1163" height="725" alt="Image" src="https://github.com/user-attachments/assets/f3974f49-9a81-48db-91d1-9348b0ffc96d" />
+<img width="1660" height="1080" alt="GREEN_banner_1660x1080" src="https://github.com/user-attachments/assets/9159faa8-62bd-4c75-8432-8c0f5642bd28" />
 
 ### Red Banner
-- Border color: Red (#e60000)
-- Button hover: Red gradient
-
-<img width="1151" height="720" alt="Image" src="https://github.com/user-attachments/assets/9910ca87-42c1-4876-aaba-12bf631776f3" />
+<img width="1660" height="1080" alt="RED_banner_1660x1080" src="https://github.com/user-attachments/assets/ed3a040f-7c79-48e1-9a2d-d5eab0efc720" />
 
 ### Yellow Banner
-- Border color: Yellow (#e6c200)
-- Button hover: Yellow gradient
-
-<img width="1153" height="721" alt="Image" src="https://github.com/user-attachments/assets/22cb3d91-a8c9-4400-ace9-15c050832904" />
+<img width="1660" height="1080" alt="YELLOW_banner_1660x1080" src="https://github.com/user-attachments/assets/fda054fa-332d-48b0-9edc-9a1e29b8a1fa" />
 
 ## Banner Features
 
