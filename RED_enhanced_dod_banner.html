@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoD Warning Banner</title>
+    <script language="javascript" src="/public/include/js/session_check.js"></script>
+    <script language="javascript"><!--//
+        if(self != top) { top.location = self.location; }
+        window.onerror=function(){ return function(){ return; } }
+
+        // Self-contained expiry notice. Does not depend on MessageDIV or
+        // SessionExpired_CustomizedScreenGet(), which this page does not define.
+        function sessionTimedOut()
+        {
+        try {
+        if ( "undefined" != typeof(window.external) && "undefined" != typeof(window.external.WebLogonClearSession) ){
+        window.external.WebLogonClearSession();
+        }
+        }catch(e){};
+        document.getElementById("buttonbox").style.display = "none";
+        document.getElementById("session-expired").style.display = "block";
+        }
+        function OnLoad()
+        {
+        try {
+        if ( "undefined" != typeof(window.external) && "unknown" != typeof(window.external)
+        && "undefined" != typeof(window.external.WebLogonNotifyUser) && "unknown" != typeof(window.external.WebLogonNotifyUser) ){
+        window.external.WebLogonNotifyUser();
+        }
+        }catch(e){};
+        if ( "function" == typeof(sessionTimeoutCheck) && "undefined" != typeof(globalTimoutInterval) ){
+        window.setTimeout(function(){ sessionTimeoutCheck(sessionTimedOut); }, globalTimoutInterval);
+        }
+        }
+        function SubmitResult(choice)
+        {
+        // Loading state blocks double submission
+        var button = document.getElementById("button");
+        if (button.classList.contains('loading')) return;
+        button.classList.add('loading');
+
+        var f = document.getElementById("hidden_form");
+        f.my_result.value = choice;
+        f.submit();
+        }
+        // Clear the loading state when the page is restored from the back/forward cache
+        window.addEventListener("pageshow", function(){
+        var button = document.getElementById("button");
+        if (button) button.classList.remove('loading');
+        });
+    --></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #33383f;
+            font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        /* Page backdrop. The solid colour is the fallback for the gradient. */
+        #dodnotice-banner {
+            background-color: #3f444c;
+            background-image: radial-gradient(ellipse at 50% 35%, #5f656f 0%, #3d4249 55%, #282c31 100%);
+            color: #16191d;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 64px;
+            box-sizing: border-box;
+        }
+        
+        /* Notice card. Whole-pixel metrics throughout keep text and rules on the
+           pixel grid. Only border-color animates; nothing here is transformed. */
+        #dodnotice-notice {
+            background-color: #ffffff;
+            border: 3px solid #e60000;
+            border-radius: 14px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 14px 28px rgba(0, 0, 0, 0.3), 0 36px 72px rgba(0, 0, 0, 0.3);
+            padding: 40px 56px 36px;
+            max-width: 1320px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+            animation: fadeIn 0.5s ease-out, borderPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes borderPulse {
+            0%, 100% { border-color: #e60000; }
+            50% { border-color: #ff3333; }
+        }
+        
+        #dodnotice-notice div {
+            text-align: center;
+        }
+        
+        #dodnotice-notice p {
+            line-height: 28px;
+            margin: 0 0 16px;
+            text-align: left;
+        }
+        
+        /* Title */
+        #dodnotice-notice p:first-child {
+            font-size: 24px;
+            line-height: 30px;
+            color: #000000;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #d5d9de;
+        }
+        
+        /* Opening statement */
+        #dodnotice-notice p:first-child + p {
+            font-size: 20px;
+            color: #000000;
+        }
+        
+        #dodnotice-notice ul {
+            margin: 0;
+            padding-left: 24px;
+            text-align: left;
+        }
+        
+        #dodnotice-notice li {
+            margin-bottom: 12px;
+            padding-left: 4px;
+            line-height: 28px;
+        }
+        
+        #buttonbox {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 30px;
+            border-top: 1px solid #d5d9de;
+        }
+        
+        /* #button is a static, invisible hit area. All visuals and all motion
+           live on .face, so the hover target never moves under the pointer. */
+        #button {
+            width: 320px;
+            height: 68px;
+            padding: 0;
+            border: 0;
+            background: none;
+            font: inherit;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        #button:focus {
+            outline: none;
+        }
+        
+        #button .face {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 22px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+            background: linear-gradient(180deg, #2d333a, #1b2025);
+            color: #ffffff;
+            border: 1px solid #11151a;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Shimmer sweep */
+        #button .face::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+        
+        /* White on #e00000 is 5.0:1 and on #c00000 is 6.5:1 (WCAG 1.4.3). */
+        #button:hover .face {
+            background: linear-gradient(180deg, #e00000, #c00000);
+            color: #ffffff;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 7px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            border-color: #a00000;
+        }
+        
+        #button:hover .face::before {
+            left: 100%;
+        }
+        
+        #button:active .face {
+            transform: translateY(-4px) scale(0.98);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        #button:focus .face {
+            outline: 3px solid #0066cc;
+            outline-offset: 3px;
+        }
+        
+        .noscript-warning {
+            margin: 0;
+            padding: 16px 24px;
+            background-color: #fff1f1;
+            border-bottom: 2px solid #c62828;
+            color: #6b0f0f;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        #session-expired {
+            display: none;
+            margin-top: 24px;
+            padding: 16px 20px;
+            border: 1px solid #e3b1b1;
+            border-radius: 10px;
+            background-color: #fff5f5;
+            color: #5a0d0d;
+            font-weight: 600;
+        }
+        
+        #session-expired a {
+            color: #0050a0;
+        }
+        
+        #session-expired a:focus {
+            outline: 3px solid #0066cc;
+            outline-offset: 2px;
+        }
+        
+        /* Loading state for the button */
+        #button.loading {
+            pointer-events: none;
+        }
+        
+        #button.loading .face {
+            background: linear-gradient(180deg, #d9dce0, #c9cdd2);
+            border-color: #b4b9c0;
+            color: #5c636b;
+            transform: none;
+        }
+        
+        #button.loading .face::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            margin: auto;
+            border: 3px solid transparent;
+            border-top-color: #5c636b;
+            border-radius: 50%;
+            animation: spinFast 0.8s linear infinite;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        
+        @keyframes spinFast {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Short displays (1366x768 class): tighten the card so the consent
+           button stays on screen without scrolling. */
+        @media (max-height: 820px) {
+            #dodnotice-banner { padding: 16px 64px; }
+            #dodnotice-notice { font-size: 16px; padding: 24px 40px 22px; }
+            #dodnotice-notice p, #dodnotice-notice li { line-height: 24px; }
+            #dodnotice-notice p { margin-bottom: 12px; }
+            #dodnotice-notice p:first-child { font-size: 21px; line-height: 26px; margin-bottom: 14px; padding-bottom: 12px; }
+            #dodnotice-notice p:first-child + p { font-size: 18px; }
+            #dodnotice-notice li { margin-bottom: 8px; }
+            #buttonbox { margin-top: 16px; padding-top: 22px; }
+            #button { height: 60px; }
+            #button .face { font-size: 16px; line-height: 20px; }
+        }
+    </style>
+</head>
+<body onload="OnLoad()">
+    <noscript>
+        <p class="noscript-warning">This site requires JavaScript and cookies. Enable JavaScript and reload the page to continue.</p>
+    </noscript>
+
+    <div id="dodnotice-banner">
+        <div id="dodnotice-notice">
+            <p><b>DOD NOTICE AND CONSENT BANNER</b></p>
+
+            <p>You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.</p>
+
+            <p>By using this IS (which includes any device attached to this IS), you consent to the following conditions:</p>
+
+            <ul>
+                <li>The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.</li>
+                <li>At any time, the USG may inspect and seize data stored on this IS.</li>
+                <li>Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.</li>
+                <li>This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.</li>
+                <li>Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.</li>
+            </ul>
+            <div>
+                <div id="buttonbox">
+                    <button type="button" id="button" onclick="SubmitResult(1)"><span class="face"><span>I ACKNOWLEDGE<br>AND CONSENT</span></span></button>
+                </div>
+                <div id="session-expired" role="alert">Your session expired due to inactivity. <a href="/">Start a new session</a>.</div>
+            </div>
+        </div>
+    </div>
+
+    <form method="post" id="hidden_form" name="hidden_form" action="/my.policy">
+        <input type='hidden' id="my_result" value='0' name='choice'>
+    </form>
+</body>
+</html>
