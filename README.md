@@ -87,8 +87,6 @@ The use of a DoD Warning Banner is a Defense Information Systems Agency (DISA) S
 4. Test the modified policy using a test virtual server
 5. Ensure the operation of the **"I ACKNOWLEDGE AND CONSENT"** button allows the user to proceed through access policy evaluation successfully
 
-<img width="1550" height="1064" alt="Image" src="https://github.com/user-attachments/assets/f254afbe-e737-48f6-99c9-f61f88fc6d2f" />
-
 ## Available Banner Types
 
 The guide includes three color variants of the DoD Warning Banner:
